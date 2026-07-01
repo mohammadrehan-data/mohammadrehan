@@ -1,0 +1,458 @@
+/* Base Reset & Fonts */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Global Safety Nets to completely eliminate horizontal scrolling */
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    width: 100%;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #007bff; /* Main Blue Theme Accent */
+    white-space: nowrap;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: #555;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
+.navbar nav a:hover, .navbar nav a.active {
+    color: #007bff;
+}
+
+/* Title Styling */
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 40px;
+    color: #222;
+    padding: 0 20px;
+}
+
+.title-underline {
+    width: 50px;
+    height: 4px;
+    background-color: #007bff;
+    margin: 10px auto 20px auto;
+    border-radius: 2px;
+}
+
+.contact-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+    font-size: 16px;
+    padding: 0 20px;
+}
+
+/* Contact Layout Structure */
+.contact-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 60px auto;
+    padding: 0 20px;
+    flex: 1; /* Pushes footer down if page content is short */
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+}
+
+/* Info Cards Styling (Left Column) */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-card {
+    background: #fff;
+    padding: 20px 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Soft premium card shadow */
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Subtle hover effect for all 4 contact info cards */
+.info-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.info-card i {
+    font-size: 24px;
+    color: #1a73e8; /* Vibrant blue for icons */
+    background: #e8f0fe; /* Soft blue background wrapper */
+    padding: 12px;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Prevents icon from squeezing */
+}
+
+.info-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #202124; /* Deep dark grey/black for headers */
+    margin-bottom: 4px;
+}
+
+.info-card p {
+    color: #5f6368; /* Soft grey text */
+    font-size: 14px;
+    margin: 0;
+    overflow-wrap: break-word; /* Crucial: breaks long email/links natively */
+    word-break: break-word;
+}
+
+/* Handle links inside the LinkedIn & GitHub cards */
+.info-card p a {
+    color: #5f6368;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.info-card p a:hover {
+    color: #1a73e8;
+    text-decoration: underline;
+}
+
+/* Form Styling (Right Column) */
+.contact-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #444;
+    font-size: 14px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    background-color: #fdfdfd;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Primary Form Action Button */
+.btn-submit {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #111;
+    color: #aaaaaa;
+    padding: 40px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.footer-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer-contact span {
+    margin-right: 20px;
+    white-space: nowrap;
+}
+
+.footer-contact i {
+    margin-right: 5px;
+}
+
+.footer-socials a {
+    color: #aaa;
+    font-size: 18px;
+    margin-left: 15px;
+    transition: color 0.3s;
+}
+
+.footer-socials a:hover {
+    color: #fff;
+}
+
+/* Base styling for the footer social links */
+.footer-socials a {
+    display: inline-block; /* Required to allow transform animations to work */
+    text-decoration: none;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease;
+}
+
+/* ==========================================
+   1. CURSOR HOVER STATE
+   ========================================== */
+
+/* Lift the icon up slightly when cursor is placed on it */
+.footer-socials a:hover {
+    transform: translateY(-2px);
+}
+
+/* Change to official LinkedIn blue on hover */
+.footer-socials a:hover .fa-linkedin {
+    color: #0077b5;
+}
+
+/* Change to GitHub purple/black on hover */
+.footer-socials a:hover .fa-github {
+    color: #6e5494;
+}
+
+/* ==========================================
+   2. CLICK / TAP STATE
+   ========================================== */
+
+/* Shrink the icon slightly for a "button press" feel when clicked */
+.footer-socials a:active {
+    transform: scale(0.85) translateY(0);
+    transition: transform 0.05s ease; /* Snappy click response */
+}
+
+ /* Fix for the "socials" text alignment  */
+.footer-socials-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Lines up text with the start of the LinkedIn logo */
+    gap: 4px;                /* Creates a small space between text and icons */
+}
+
+.socials-label {
+    font-size: 18px;
+    text-transform: none;
+    color: #ffffff;             /* Sleek, dim grey color */
+}
+
+.footer-socials a:first-child {
+    margin-left: 0px !important; /* Removes any leftover left margin forcing it out of alignment */
+}
+
+/* Smooth scroll behavior for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* New layout rules isolated strictly to the center links */
+.footer-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-nav a {
+    color: #aaaaaa; /* Matches your exact copyright text color */
+    text-decoration: none;
+    font-size: 14px; /* Matches your exact footer font size */
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #ffffff; /* Smooth transition to white on hover */
+}
+
+.footer-nav .separator {
+    color: #444444; /* Subtle divider lines */
+    user-select: none;
+}
+
+/* Enable smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Ensure the parent footer can handle absolute centering */
+.footer {
+    position: relative; 
+}
+
+/* Shifting the copyright text slightly to the right */
+.footer-copyright {
+    margin-left: 40px; /* Adjust this value to shift it more or less */
+    margin-bottom: 0;  /* Prevents any default paragraph spacing issues */
+}
+
+/* Forcing the links to be perfectly centered in the footer container */
+.footer-nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* New Link Styling to match your aesthetic */
+.footer-nav a {
+    color: #aaaaaa;
+    text-decoration: none;
+    font-size: 14px; /* Matches your existing footer font-size */
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #ffffff;
+}
+
+.footer-nav .separator {
+    color: #444444;
+    user-select: none;
+}
+
+
+/* =======================================================
+   RESPONSIVE LAYOUT UPDATES
+   ======================================================= */
+
+/* --- Tablet Views (900px and below) --- */
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* Switch to a stacked single column */
+        gap: 30px;
+    }
+    
+    .navbar {
+        padding: 20px 5%; /* Bring navigation closer to edges */
+    }
+}
+
+/* --- Mobile Views (768px and below) --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 15px 20px;
+    }
+
+    .navbar nav {
+        margin: 0;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .navbar nav a {
+        margin: 0 10px;
+    }
+
+    .section-title {
+        font-size: 28px;
+        margin-top: 30px;
+    }
+
+    .contact-form {
+        padding: 20px; /* Slight padding drop to maximize entry fields */
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 20px;
+    }
+    
+    .footer-contact {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .footer-contact span {
+        display: block;
+        margin: 0;
+    }
+    
+    .footer-socials a {
+        margin: 0 10px;
+    }
+}
+
+/* --- Tiny Mobile Screens (400px and below) --- */
+@media (max-width: 400px) {
+    .info-card {
+        flex-direction: column; /* Icon stays cleanly centered above contact text block */
+        text-align: center;
+        padding: 20px 15px;
+    }
+    
+    .contact-container {
+        padding: 0 15px;
+    }
+}
